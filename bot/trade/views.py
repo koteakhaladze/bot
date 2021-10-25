@@ -6,7 +6,7 @@ from decimal import Decimal
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
-from trade.models import Message
+from bot.trade.models import Message
 
 
 API_KEY = os.environ.get('API_KEY', False)

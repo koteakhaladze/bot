@@ -32,7 +32,7 @@ def round_down(number: float, decimals: int = 2):
 
 def get_symbol_from_pair(pair):
     if 'USDT' in pair:
-        pair.replace('USDT', '')
+        pair = pair.replace('USDT', '')
     return pair
 
 
@@ -96,13 +96,13 @@ class Trade():
         return order
 
     def sell(self, pair):
-        asset_balance = self.client.get_asset_balance('ETH').get('free')
+        asset_balance = self.client.get_asset_balance(get_symbol_from_pair(pair)).get('free')
 
         tick = None
         amount = None
         info = self.client.get_symbol_info(pair)
         for filt in info['filters']:
-            if filt['filtertype'] == 'LOT_SIZE':
+            if filt['filterType'] == 'LOT_SIZE':
                 tick = filt['stepSize']
                 break
 

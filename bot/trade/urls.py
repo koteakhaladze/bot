@@ -1,4 +1,4 @@
-from bot.trade.views import message_create
+from .views import message_create
 from django.urls import path
 
 app_name = 'trade'

@@ -4,4 +4,4 @@ from .models import Message
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('ticket', 'action', 'message', 'result', 'result_at')
+    list_display = ('ticker', 'action', 'message', 'result', 'result_at')

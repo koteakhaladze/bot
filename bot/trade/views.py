@@ -96,7 +96,7 @@ class Trade():
         return order
 
     def sell(self, pair):
-        asset_balance = self.client.get_asset_balance(get_symbol_from_pair(pair)).get('free')
+        asset_balance = self.client.get_asset_balance('ETH').get('free')
 
         tick = None
         amount = None
